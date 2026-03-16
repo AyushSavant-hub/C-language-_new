@@ -1,0 +1,53 @@
+#include <stdio.h>
+void add(int x,int y){
+    printf("sum=%d\n",x+y);}
+void sub(int x,int y){
+    printf("difference=%d",x-y);}
+void multiply(int x,int y){
+    printf("multiplication=%d\n",x*y);}
+void div(int x,int y){
+    printf("division=%d\n",x/y);}
+void fact(int x){
+    int i,f=1;
+    for(i=1;i<=x;++i){
+        f*=i;}
+    printf("Factorial of %d = %d\n", x, f);
+}
+int main() {
+    int ch,a,b;
+    printf("-----------------------------------CALCULATOR'S MENU----------------------------------\n");
+    printf("                1. Addition\n");
+    printf("                2. Substraction\n");
+    printf("                3. Multiplication\n");
+    printf("                4. Division\n");
+    printf("                5. Factorial\n");
+    printf("Enter your choice:");
+    scanf("%d",&ch);
+    printf("Enter two numbers\n");
+    scanf("%d\n",&a);
+    scanf("%d",&b);
+    switch(ch){
+        case 1:
+        add(a,b);
+        break;
+        case 2:
+        sub(a,b);
+        break;
+        case 3:
+        multiply(a,b);
+        break;
+        case 4:
+        if(b!=0){
+            div(a,b);}
+        else{
+            printf("division is not possible");
+        }
+        break;
+        case 5:
+        fact(a);
+        break;
+    default:
+        printf("invalid choice\n");
+    }
+    return 0;
+}
